@@ -32,6 +32,8 @@
 - Выявлены и описаны проблемные места
 - Выполнена приоритизация по методу MoSCoW
 
+![C4 Diagram](Task1/C4.png)
+
 **Файлы:**
 - [`C4.puml`](Task1/C4.puml)
 - [`problems_architecture.md`](Task1/problems_architecture.md)
@@ -45,6 +47,8 @@
 - Система разделена на независимые домены
 - Разработана Data Flow Diagram
 - Приведена аргументация преимуществ такого подхода
+
+![Data Flow Diagram](Task2/data_flow_diagram.png)
 
 **Файлы:**
 - [`domain_model.md`](Task2/domain_model.md)
@@ -60,6 +64,8 @@
 - Разработан технологический роадмап (в Draw.io и PlantUML)
 - Подготовлено обоснование этапов трансформации
 
+![Tech Roadmap](Task3/tech_roadmap.png)
+
 **Файлы:**
 - [`tech_radar.md`](Task3/tech_radar.md)
 - [`tech_roadmap.puml`](Task3/tech_roadmap.puml)
@@ -74,4 +80,3 @@
 - Снижение зависимости от легаси
 - Повышение гибкости и прозрачности архитектуры
 - Оптимизацию бизнес-отчётности
-

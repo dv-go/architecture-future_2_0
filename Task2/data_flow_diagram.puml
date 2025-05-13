@@ -1,0 +1,69 @@
+
+@startuml Domain_DataFlow_Diagram
+!define RECTANGLE class
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+' Источники данных
+RECTANGLE MedicalData {
+  :Медицинский домен;
+  :Хранение обезличенных данных;
+}
+
+RECTANGLE FintechData {
+  :Финтех-домен;
+  :Кредитные и транзакционные данные;
+}
+
+RECTANGLE IoTData {
+  :Электроника / IoT;
+  :Сбор телеметрии;
+}
+
+RECTANGLE AIService {
+  :ИИ-домен;
+  :Модели, анализ, вывод;
+}
+
+RECTANGLE IAM {
+  :Сервис IAM;
+  :Авторизация и доступ;
+}
+
+' Платформа данных
+RECTANGLE ETL {
+  :ETL/ELT пайплайны;
+  :Очистка, агрегация, доставка;
+}
+
+RECTANGLE DataMart {
+  :Data Mart / Сервис агрегации;
+  :Аналитическая витрина;
+}
+
+RECTANGLE BI {
+  :BI-система / Витрина данных;
+  :Power BI / Портал;
+}
+
+RECTANGLE LegacyDWH {
+  :Legacy DWH;
+  :Только как источник;
+}
+
+' Потоки
+MedicalData -down-> ETL
+FintechData -down-> ETL
+IoTData -down-> ETL
+LegacyDWH -down-> ETL : временный источник
+
+ETL -down-> DataMart
+AIService -right-> DataMart : обогащение / выводы
+
+DataMart -down-> BI
+IAM -right-> BI : контроль доступа
+
+@enduml
